@@ -27,8 +27,8 @@ import { Tour } from './tour/tour.model';
 import { TourExcursion } from './tour-excursion/tour-excursion.model';
 
 @Module({
-  controllers: [TourController],
-  providers: [TourExcursionService],
+  controllers: [],
+  providers: [],
   imports: [
     ConfigModule.forRoot({
       envFilePath: '.env',
