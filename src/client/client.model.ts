@@ -10,6 +10,7 @@ import { CreateClientDto } from './dto/create-client.dto';
   tableName: 'client',
   createdAt: false,
   updatedAt: false,
+  paranoid: true,
 })
 export class Client extends Model<Client, CreateClientDto> {
   @Column({

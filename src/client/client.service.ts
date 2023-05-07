@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateClientDto } from './dto/create-client.dto';
 import { InjectModel } from '@nestjs/sequelize';
 import { Client } from './client.model';
-import { DeleteClientDto } from './dto/delete-client.dto';
+import { IdDto } from '../dto/id.dto';
 import { Error } from 'src/error/error';
 import { Errors } from 'src/error/errors';
 
@@ -20,8 +20,8 @@ export class ClientService {
     return clients;
   }
 
-  async deleteClient(dto: DeleteClientDto): Promise<Client> {
-    const client: Client = await this.getClientById(dto.id_client);
+  async deleteClient(dto: IdDto): Promise<Client> {
+    const client: Client = await this.getClientById(dto.id);
     await client.destroy();
     return client;
   }

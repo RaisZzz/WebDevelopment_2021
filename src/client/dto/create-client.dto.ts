@@ -1,12 +1,14 @@
-import { IsDateString, IsNotEmpty, IsString, IsInt } from 'class-validator';
+import { IsDateString, IsNotEmpty, IsString, IsInt, MaxLength } from 'class-validator';
 
 export class CreateClientDto {
   @IsString()
   @IsNotEmpty()
+  @MaxLength(50)
   fcs: string;
 
   @IsString()
   @IsNotEmpty()
+  @MaxLength(50)
   address: string;
 
   @IsDateString()

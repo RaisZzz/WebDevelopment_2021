@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Post, Query } from '@nestjs/common';
 import { ClientService } from './client.service';
 import { CreateClientDto } from './dto/create-client.dto';
 import { Client } from './client.model';
-import { DeleteClientDto } from './dto/delete-client.dto';
+import { IdDto } from '../dto/id.dto';
 
 @Controller('client')
 export class ClientController {
@@ -14,8 +14,8 @@ export class ClientController {
   }
 
   @Get('/get')
-  get(@Query() dto: DeleteClientDto): Promise<Client> {
-    return this.clientService.getClientById(dto.id_client);
+  get(@Query() dto: IdDto): Promise<Client> {
+    return this.clientService.getClientById(dto.id);
   }
 
   @Get('/get_all')
@@ -24,7 +24,7 @@ export class ClientController {
   }
 
   @Delete('/delete')
-  delete(@Body() dto: DeleteClientDto): Promise<Client> {
+  delete(@Body() dto: IdDto): Promise<Client> {
     return this.clientService.deleteClient(dto);
   }
 }

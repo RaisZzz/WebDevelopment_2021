@@ -1,8 +1,8 @@
 import { IsInt } from "class-validator";
 import { Type } from "class-transformer";
 
-export class DeleteClientDto {
+export class IdDto {
     @IsInt()
     @Type(() => Number)
-    id_client: number;
+    id: number;
 }
