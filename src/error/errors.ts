@@ -14,4 +14,5 @@ export enum Errors {
   StepError,
   Unsubscribe,
   Deleted,
+  NotFound,
 }

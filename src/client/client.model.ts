@@ -20,10 +20,10 @@ export class Client extends Model<Client, CreateClientDto> {
   })
   id_client: number;
 
-  @Column({ type: DataType.CHAR(50), allowNull: false })
+  @Column({ type: DataType.STRING(50), allowNull: false })
   fcs: string;
 
-  @Column({ type: DataType.CHAR(50), allowNull: false })
+  @Column({ type: DataType.STRING(50), allowNull: false })
   address: string;
 
   @Column({ type: DataType.DATE, allowNull: false })
