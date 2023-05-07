@@ -7,7 +7,6 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { OrderModule } from './order/order.module';
 import { TourController } from './tour/tour.controller';
 import { TourModule } from './tour/tour.module';
-import { CountryService } from './country/country.service';
 import { CountryModule } from './country/country.module';
 import { ResortController } from './resort/resort.controller';
 import { ResortModule } from './resort/resort.module';
@@ -15,7 +14,6 @@ import { ServiceService } from './service/service.service';
 import { ServiceController } from './service/service.controller';
 import { ServiceModule } from './service/service.module';
 import { ServiceTourModule } from './service-tour/service-tour.module';
-import { ExcursionController } from './excursion/excursion.controller';
 import { ExcursionModule } from './excursion/excursion.module';
 import { TourExcursionService } from './tour-excursion/tour-excursion.service';
 import { TourExcursionModule } from './tour-excursion/tour-excursion.module';
@@ -29,7 +27,7 @@ import { Tour } from './tour/tour.model';
 import { TourExcursion } from './tour-excursion/tour-excursion.model';
 
 @Module({
-  controllers: [TourController, ResortController, ServiceController, ExcursionController],
+  controllers: [TourController, ResortController, ServiceController],
   providers: [ServiceService, TourExcursionService],
   imports: [
     ConfigModule.forRoot({

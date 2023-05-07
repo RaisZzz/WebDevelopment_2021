@@ -1,6 +1,5 @@
 import { Optional } from "@nestjs/common";
-import { IsInt, IsNotEmpty, IsString, MaxLength } from "class-validator";
-import { Max } from "sequelize-typescript";
+import { IsInt, IsNotEmpty, IsString, MaxLength, Max } from "class-validator";
 
 export class CreateOrderDto {
     @IsInt()

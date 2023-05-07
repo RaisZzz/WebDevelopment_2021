@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { ValidationError } from 'class-validator';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { HttpErrorByCode } from '@nestjs/common/utils/http-error-by-code.util';
 
 interface Error {
@@ -33,6 +34,12 @@ async function start() {
       },
     }),
   );
+
+  const config = new DocumentBuilder()
+    .setTitle('WebDevelopment')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('/api/docs', app, document);
 
   await app.listen(PORT, () => console.log(`server started on port = ${PORT}`));
 }
